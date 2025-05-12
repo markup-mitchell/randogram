@@ -2,17 +2,40 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #FAFAFA;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-family: 'Cookie', cursive;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  max-width: 475px;
+  gap: 12px;
+}
+
+.gallery__item {
+  padding-top: 32px;
+  padding-bottom: 120px;
+  border-radius: 8px;
+  border: solid 1px rgb(219,219,219);
+  background-color: white;
 }
 
 .photo {
+  aspect-ratio: 1 / 1;
   max-width: 100%;
   display: block;
-  width: 375px;
-  height: 375px;
+  filter: contrast(1.2);
 }
 
-ul {
-  list-style: none;
+figure {
   padding: 0;
   margin: 0;
 }

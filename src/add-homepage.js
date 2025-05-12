@@ -12,20 +12,28 @@ const homepage = (data) => `
         <link rel="stylesheet" href="style.css"/>
         <meta name="apple-mobile-web-app-status-bar" content="#333"/>
         <meta name="theme-color" content="#333"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     </head>
     <body>
         <main class='p4'>
-            <header>
-                <!-- <h1>${ config.siteName }</h1> -->
-            </header>
-
-            <ul class="gallery">
-                ${ data.map((imgObj) =>
-{
-  return `<li class="gallery__item"><img class="photo" src="${ imgObj.url }" alt="" loading="lazy"/></li>`
-}
-).reverse().join('') }
-            </ul>
+          <div class="gallery">
+            <div class="gallery__item">
+              <h1 class="title">Randogram</h1>
+            </div>
+              ${ data.map((imgObj) => {
+                  return `
+                  <article class="gallery__item">
+                    <header></header>
+                    <figure>
+                      <img class="photo" src="${ imgObj.url }" alt="" loading="lazy"/>
+                    </figure>
+                    </article>
+                    `
+                  }).reverse().join('')
+                }
+            </div>
         </main>
         <!-- empty script tag (must include space) is to resolve a chrome bug that fires CSS transitions on page load -->
         <script> </script>  <!-- needed with script below? -->
